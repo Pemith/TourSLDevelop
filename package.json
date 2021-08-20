@@ -15,5 +15,13 @@
     "joi": "^17.4.2",
     "mongoose": "^5.13.7",
     "nodemon": "^2.0.12"
-  }
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Pemith/TourSLDevelop.git"
+  },
+  "bugs": {
+    "url": "https://github.com/Pemith/TourSLDevelop/issues"
+  },
+  "homepage": "https://github.com/Pemith/TourSLDevelop#readme"
 }
