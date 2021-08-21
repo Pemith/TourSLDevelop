@@ -4,7 +4,7 @@ const express=require('express');
 const router=express.Router();
 
 router.get('/',async(req,res)=>{
-    const ap=await ActivityProvider.find().sort('name');
+    const ap=await ActivityProvider.find().sort('activityType');
     res.send(ap);
 });
 
