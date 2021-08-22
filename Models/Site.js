@@ -7,12 +7,6 @@ const siteSchema=new mongoose.Schema({
         required:true
     },
 
-    address: {
-        type: String,
-        max: 255,
-        required:true
-    },
-
     siteType: {
         type: String,
         max: 255,

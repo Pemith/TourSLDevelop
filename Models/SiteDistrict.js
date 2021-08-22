@@ -4,13 +4,27 @@ const {siteSchema}=require('./Site');
 
 //Goda goda
 const siteDistrictSchema=new mongoose.Schema({
-    address: {
-        type: siteSchema,
-        required: true
+
+    site:{
+        type:new mongoose.Schema({
+            required:true
+        }),
+        required:true
     },
-    name: {
+
+    address: {
+        type: String,
+        max: 255,
+        required:true
+    },
+    district: {
         type: String,
         required:true,
+    },
+    date:{
+        type:Date,
+        required:true,
+        default:Date.now
     }
 });
 
@@ -20,6 +34,8 @@ const site=mongoose.model('Site_District',siteDistrictSchema);
 function siteDistrictValidation(district){
 
     const schema=Joi.object({
+        siteId: Joi.objectId()
+            .required(),
         address: Joi.string()
             .required(),
         name: Joi.string()
