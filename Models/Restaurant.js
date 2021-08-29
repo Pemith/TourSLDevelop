@@ -3,17 +3,16 @@ const Joi=require('joi');
 
 const restaurantSchema= new mongoose.Schema({
 
-    Cuisine:{
+    cuisine:{
         type: [String],
         required: true,
     },
-    Menu: {
+    menu: {
         type: String
     },
-    Dining_Type:{
+    diningType:{
         type:[String],
-        required: true,
-        minLength: 2
+        required: true
     }
 
 });
@@ -23,14 +22,14 @@ const restaurant=mongoose.model('Restaurants',restaurantSchema);
 function validateRestaurant(restaurant){
 
     const schema=Joi.object({
-        Cuisine:Joi.string().required(),
-        Menu: Jpi.string().required(),
-        Dining_Type:Joi.string().min(2).required()
+        cuisine:Joi.string().required(),
+        menu: Joi.string().required(),
+        diningType:Joi.string().required()
     }).options({abortEarly:false});
 
     return schema.validate(restaurant);
 }
 
-exports.restaurant=restaurant;
+exports.Restaurant=restaurant;
 exports.validate=validateRestaurant;
 

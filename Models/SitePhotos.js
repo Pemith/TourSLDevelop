@@ -1,11 +1,14 @@
 const mongoose=require('mongoose');
 const Joi=require('joi');
-const { string } = require('joi');
+
 
 const sitePhotoSchema=new mongoose.Schema({
     site:{
         type:new mongoose.Schema({
-            required:true
+            name: {
+                type:String,
+                required:true
+            },         
         }),
         required:true
     },
@@ -16,7 +19,7 @@ const sitePhotoSchema=new mongoose.Schema({
     }    
 });
 
-const sitePhotos=mongoose.model('Site Photos',sitePhotoSchema);
+const sitePhotos=mongoose.model('site_photo',sitePhotoSchema);
 
 function validatePhotoSchema(photo){
     

@@ -1,10 +1,10 @@
-const {ActivityProvider, validate}=require('../Models/ActivityProvider');
+const {Restaurant, validate}=require('../Models/Restaurant');
 const mongoose=require('mongoose');
 const express=require('express');
 const router=express.Router();
 
 router.get('/',async(req,res)=>{
-    const ap=await ActivityProvider.find().sort('activityType');
+    const ap=await Restaurant.find().sort('activityType');
     res.send(ap);
 });
 
@@ -12,14 +12,13 @@ router.post('/',async (req,res)=>{
     const {error}=validate(req.body);
     if (error) return res.status(400).send(error.details[0].message);
     
-    let ap=new ActivityProvider({
-        activityType:req.body.activityType,
-        package:req.body.package,
-        price:req.body.price
+    let ap=new Restaurant({
+        cuisine:req.body.cuisine,
+        menu:req.body.menu,
+        diningType:req.body.diningType
     });
     try{
-        ap=await ap.save();
-    
+        ap=await ap.save();    
         res.send(ap);
     }
 
@@ -36,7 +35,7 @@ router.put("/:id", async(req,res)=>{
         return res.status(400).send(error.details[0].message);
     }
 
-    const ap=await ActivityProvider.findByIdAndUpdate(
+    const ap=await Restaurant.findByIdAndUpdate(
         req.params.id,
         {name:req.body.name},
         {
@@ -52,7 +51,7 @@ router.put("/:id", async(req,res)=>{
 
 
 router.delete("/:id", async(req,res)=>{
-    const ap=await ActivityProvider.findByIdAndRemove(req.params.id);
+    const ap=await Restaurant.findByIdAndRemove(req.params.id);
 
     if(!ap){
         return res.status(404).send("The ID is not found");
@@ -62,7 +61,7 @@ router.delete("/:id", async(req,res)=>{
 });
 
 router.get(':id',async(req,res)=>{
-    const ap=await ActivityProvider.findById(req.params.id);
+    const ap=await Restaurant.findById(req.params.id);
 
     if(!ap){
         return res.status(404).send('The ID was not found');

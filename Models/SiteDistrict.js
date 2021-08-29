@@ -45,5 +45,5 @@ function siteDistrictValidation(district){
     return schema.validate(district);
 }
 
-exports.site=site;
+exports.siteDistrict=site;
 exports.siteDistrictValidation=siteDistrictValidation;
