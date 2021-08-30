@@ -2,24 +2,26 @@ const mongoose=require('mongoose');
 const Joi=require('joi');
 
 const ecSchema=new mongoose.Schema({
-    scenary: {
-        type: String,
-        required: true
+    site:{
+        type:new mongoose.Schema({
+            required:true
+        }),
+        required:true
     },
-
-    description:{
+    organizational_type: {
         type: String,
         required: true
     }
+
 });
 
 const ec=mongoose.model('Natural_Place',ecSchema);
 
 function validateEC(natPlace){
     const schema=Joi.object({
-        scenary: Joi.string()
+        siteId: Joi.objectId()
             .required(),
-        description: Joi.string()
+        organizational_type: Joi.string()
             .required()
     }).options({abortEarly:false});
 }
