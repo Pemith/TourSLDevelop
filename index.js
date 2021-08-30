@@ -22,8 +22,8 @@ if(!config.get('jwtPrivateKey')){
 }
 
 
-//const urlDB='mongodb+srv://pemithw:pemith12345@toursldb.rxady.mongodb.net/TourSLDB?retryWrites=true&w=majority';
-const urlDB='mongodb://localhost:27017/TourSLDB';
+const urlDB='mongodb+srv://pemithw:pemith12345@toursldb.rxady.mongodb.net/TourSLDB?retryWrites=true&w=majority';
+//const urlDB='mongodb://localhost:27017/TourSLDB';
 mongoose.connect(urlDB, {
         useNewUrlParser: true,
         useUnifiedTopology: true,
