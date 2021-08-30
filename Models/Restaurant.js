@@ -38,7 +38,3 @@ exports.validate=validateRestaurant;
 
 
 
-
-exports.Restaurant=restaurant;
-exports.validate=validateRestaurant;
-
