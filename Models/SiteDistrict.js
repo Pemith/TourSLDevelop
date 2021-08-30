@@ -2,7 +2,7 @@ const mongoose=require('mongoose');
 const Joi=require('joi');
 const {siteSchema}=require('./Site');
 
-//Goda goda
+
 const siteDistrictSchema=new mongoose.Schema({
 
     site:{

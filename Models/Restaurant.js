@@ -1,5 +1,5 @@
-const mongoose=require('mongoose');
-const Joi=require('joi');
+const mongoose = require('mongoose');
+const Joi = require('joi');
 
 const restaurantSchema= new mongoose.Schema({
 
@@ -30,5 +30,10 @@ function validateRestaurant(restaurant){
     return schema.validate(restaurant);
 }
 
+
+
 exports.Restaurant=restaurant;
 exports.validate=validateRestaurant;
+
+
+
