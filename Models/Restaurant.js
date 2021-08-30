@@ -32,8 +32,13 @@ function validateRestaurant(restaurant){
 
 
 
+
 exports.Restaurant=restaurant;
 exports.validate=validateRestaurant;
 
 
+
+
+exports.Restaurant=restaurant;
+exports.validate=validateRestaurant;
 
