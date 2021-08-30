@@ -17,7 +17,7 @@ const restaurantSchema= new mongoose.Schema({
 
 });
 
-const restaurant=mongoose.model('Restaurants',restaurantSchema);
+const restaurant=mongoose.model('restaurant',restaurantSchema);
 
 function validateRestaurant(restaurant){
 
@@ -32,4 +32,3 @@ function validateRestaurant(restaurant){
 
 exports.Restaurant=restaurant;
 exports.validate=validateRestaurant;
-
