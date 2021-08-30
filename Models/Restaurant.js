@@ -30,5 +30,15 @@ function validateRestaurant(restaurant){
     return schema.validate(restaurant);
 }
 
+
+
+
 exports.Restaurant=restaurant;
 exports.validate=validateRestaurant;
+
+
+
+
+exports.Restaurant=restaurant;
+exports.validate=validateRestaurant;
+
