@@ -30,6 +30,9 @@ router.post('/', async(req, res) => {
         district: req.body.district
     });
 
+    const salt = await bcrypt.genSalt(10);
+    client.password = await bcrypt.hash(client.password, salt);
+
     try {
         client = await client.save();
         res.send(client);
