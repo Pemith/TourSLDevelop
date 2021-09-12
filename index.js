@@ -37,7 +37,7 @@ app.use(express.json());
 app.use('/api/activityprovider', activityProvider);
 app.use('/api/restaurant',restaurant);
 app.use('/api/customer', customer);
-app.use('/api/auth',authCustomer);
+app.use('/api/authcustomer',authCustomer);
 app.use('/api/admin',admin);
 app.use('/api/authadmin',authAdmin);
 app.use('/api/site',site);

@@ -23,7 +23,7 @@ router.post('/',async (req,res)=>{
     }
 
     const token=customer.generateAuthToken();
-    res.send('Successfully logged In ',token);
+    res.send(token);
 });
 
 function validate(req){
