@@ -1,5 +1,6 @@
 const {Site,validation}=require('../Models/Site');
 const {sitePhotos,validatePhotoSchema}=require('../Models/SitePhotos');
+const auth=require('../middleware/AuthorizationAdmin');
 const mongoose=require('mongoose');
 const express=require('express');
 const router=express.Router();
@@ -11,7 +12,7 @@ router.get('/', async (req,res)=>{
     const site=await Site.find().sort('name');
     res.send(site);
 });
-router.post('/', async (req,res)=>{
+router.post('/', auth, async (req,res)=>{
     const {error}=validation(req.body);
     if(error){
         return res.status(400).send(error.details[0].message);

@@ -12,7 +12,7 @@ const sitePhotoSchema=new mongoose.Schema({
         }),
         required:true
     },
-
+    
     photos: {
         type: String,
         required:true
