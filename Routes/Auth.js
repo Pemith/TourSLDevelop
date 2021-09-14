@@ -24,7 +24,7 @@ router.post('/', async(req, res) => {
 
 
     const token = customer.generateAuthToken();
-    const token=customer.generateAuthToken();
+    console.log('Successfully Logged In');
     res.send(token);
 });
 
