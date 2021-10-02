@@ -1,3 +1,6 @@
 {
-    "jwtPrivateKey":""
+    "jwtPrivateKey":"unsecureKey",
+    "db":"mongodb+srv://pemithw:pemith12345@toursldb.rxady.mongodb.net/TourSLDB?retryWrites=true&w=majority",
+    "port":"3900",
+    "requireAuth":false
 }

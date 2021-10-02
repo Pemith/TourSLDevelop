@@ -7,10 +7,17 @@ const router=express.Router();
 const {Customer,validate}=require('../Models/Customer');
 
 
-router.get('/me',authz, async(req,res)=>{
-    const customer=await Customer.findById(req.customer._id).select('-password');
+// router.get('/me',authz, async(req,res)=>{
+//     const customer=await Customer.findById(req.customer._id).select('-password');
+//     res.send(customer);
+// });
+
+router.get("/", async (req, res) => {
+    const customer = await Customer.find()
+      .select("-__v")
+      .sort("name");
     res.send(customer);
-});
+  });
 
 router.post('/',async (req,res)=>{
 

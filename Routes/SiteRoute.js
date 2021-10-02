@@ -1,6 +1,7 @@
 const {Site,validation}=require('../Models/Site');
 const {sitePhotos,validatePhotoSchema}=require('../Models/SitePhotos');
-const auth=require('../middleware/AuthorizationAdmin');
+const authz=require('../middleware/AuthorizationAdmin');
+const validateObjectId=require("../middleware/validateObjectId");
 const mongoose=require('mongoose');
 const express=require('express');
 const router=express.Router();
@@ -9,10 +10,14 @@ const router=express.Router();
 
 router.get('/', async (req,res)=>{
 
-    const site=await Site.find().sort('name');
+    const site=await Site.find()
+        .select("-__v")
+        .sort('name');
     res.send(site);
 });
-router.post('/', auth, async (req,res)=>{
+
+
+router.post('/', authz, async (req,res)=>{
     const {error}=validation(req.body);
     if(error){
         return res.status(400).send(error.details[0].message);
@@ -72,8 +77,8 @@ router.delete('/:id',async(req,res)=>{
     res.send(site);
 });
 
-router.get(':id',async(req,res)=>{
-    const site=await Site.findById(req.params.id);
+router.get('/:id',validateObjectId,async(req,res)=>{
+    const site=await Site.findById(req.params.id).select("-__v");
 
     if(!site){
         return res.status(404).send('The ID was not found');
