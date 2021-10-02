@@ -21,13 +21,18 @@ const adminSchema=new mongoose.Schema({
         minlength:8,
         maxlength:256,
         required:true
-    },
-    isAdmin: Boolean
-
+    }
    
 });
 adminSchema.methods.generateAuthToken=function(){
-    const token=jwt.sign({_id: this._id},config.get('jwtPrivateKey'));
+    const token=jwt.sign(
+        {
+            _id: this._id,
+            name:this.name,
+            email:this.email
+        },
+        config.get('jwtPrivateKey')
+    );
     return token;
 }
 
@@ -38,7 +43,6 @@ function validateAdmin(admin){
         name:Joi.string().min(3).max(10).required(),
         email: Joi.string().required().email(),           
         password: Joi.string().min(8).max(256).required(),
-        isAdmin:Joi.required()
         
     }).options({abortEarly:false});
 

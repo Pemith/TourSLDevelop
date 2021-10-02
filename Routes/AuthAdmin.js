@@ -26,7 +26,9 @@ router.post('/', async (req,res)=>{
     }
 
     const token=admin.generateAuthToken();
+    console.log('Admin Logged In successfully');
     res.send(token);
+    
 });
 
 function validate(req){

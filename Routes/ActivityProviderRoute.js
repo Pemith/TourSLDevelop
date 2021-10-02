@@ -1,3 +1,4 @@
+const validateObjectId=require('../middleware/validateObjectId');
 const {ActivityProvider, validate}=require('../Models/ActivityProvider');
 const mongoose=require('mongoose');
 const express=require('express');
@@ -62,11 +63,12 @@ router.delete("/:id", async(req,res)=>{
     res.send(ap);
 });
 
-router.get(':id',async(req,res)=>{
-    const ap=await ActivityProvider.findById(req.params.id);
+router.get('/:id', validateObjectId, async(req,res)=>{
+
+    const ap=await ActivityProvider.findById(req.params.id).select("-__V");
 
     if(!ap){
-        return res.status(404).send('The ID was not found');
+        return res.status(404).send('The activity provider ID was not found');
     }
     res.send(ap);
 });
