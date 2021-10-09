@@ -25,7 +25,7 @@ module.exports=function(app){
     app.use('/api/client', client);
     app.use('/api/clientLegalDocuments', clientLegalDocuments);
     app.use('/api/clientPhotos', clientPhotos);
-    app.use('/api/clientTemp', clientTemp);
+    app.use('/api/clienttemp', clientTemp);
     app.use('/api/clientauth', authClient);
     app.use(error);
 }

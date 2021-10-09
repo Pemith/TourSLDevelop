@@ -60,7 +60,7 @@ router.delete("/:id", async(req,res)=>{
     res.send(ap);
 });
 
-router.get(':id',async(req,res)=>{
+router.get('/:id',async(req,res)=>{
     const ap=await Restaurant.findById(req.params.id);
 
     if(!ap){

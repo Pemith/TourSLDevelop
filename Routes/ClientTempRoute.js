@@ -22,11 +22,11 @@ router.post('/', async(req, res) => {
 
     clientTemp = new ClientTemp({
         companyName: req.body.companyName,
-        NICofAccountHolder: req.body.NICofAccountHolder,
+        serviceType: req.body.serviceType,
+        address:req.body.address,
+        district:req.body.district,
         email: req.body.email,
         password: req.body.password,
-        serviceType: req.body.serviceType,
-        documents: req.body.documents
     });
 
     try {
