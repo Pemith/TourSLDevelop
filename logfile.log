@@ -1156,3 +1156,68 @@
 {"level":"info","message":"Connected to mongodb+srv://admin:admin12345@toursldb.oibep.mongodb.net/TourSLDB?retryWrites=true&w=majority...","timestamp":"2021-10-11T14:02:33.357Z"}
 {"level":"info","message":"Listeing on port 3900...","timestamp":"2021-10-11T14:24:33.768Z"}
 {"level":"info","message":"Connected to mongodb+srv://admin:admin12345@toursldb.oibep.mongodb.net/TourSLDB?retryWrites=true&w=majority...","timestamp":"2021-10-11T14:24:47.128Z"}
+{"level":"info","message":"Listeing on port 3900...","timestamp":"2021-10-11T14:27:23.129Z"}
+{"level":"info","message":"Connected to mongodb+srv://admin:admin12345@toursldb.oibep.mongodb.net/TourSLDB?retryWrites=true&w=majority...","timestamp":"2021-10-11T14:27:32.309Z"}
+{"level":"info","message":"Listeing on port 3900...","timestamp":"2021-10-11T14:30:20.403Z"}
+{"level":"info","message":"Connected to mongodb+srv://admin:admin12345@toursldb.oibep.mongodb.net/TourSLDB?retryWrites=true&w=majority...","timestamp":"2021-10-11T14:30:33.881Z"}
+{"level":"info","message":"Listeing on port 3900...","timestamp":"2021-10-11T14:31:39.005Z"}
+{"level":"info","message":"Connected to mongodb+srv://admin:admin12345@toursldb.oibep.mongodb.net/TourSLDB?retryWrites=true&w=majority...","timestamp":"2021-10-11T14:31:49.261Z"}
+{"level":"info","message":"Listeing on port 3900...","timestamp":"2021-10-11T14:32:38.429Z"}
+{"level":"info","message":"Connected to mongodb+srv://admin:admin12345@toursldb.oibep.mongodb.net/TourSLDB?retryWrites=true&w=majority...","timestamp":"2021-10-11T14:32:52.119Z"}
+{"level":"info","message":"Listeing on port 3000...","timestamp":"2021-10-11T14:33:20.347Z"}
+{"level":"info","message":"Listeing on port 3000...","timestamp":"2021-10-11T14:33:20.359Z"}
+{"level":"info","message":"Connected to mongodb://localhost:27017/TourSLDB-testing...","timestamp":"2021-10-11T14:33:33.701Z"}
+{"level":"info","message":"Connected to mongodb://localhost:27017/TourSLDB-testing...","timestamp":"2021-10-11T14:33:33.704Z"}
+{"level":"info","message":"Listeing on port 3000...","timestamp":"2021-10-11T14:33:33.743Z"}
+{"level":"info","message":"Listeing on port 3000...","timestamp":"2021-10-11T14:33:51.898Z"}
+{"level":"info","message":"Connected to mongodb://localhost:27017/TourSLDB-testing...","timestamp":"2021-10-11T14:33:51.991Z"}
+{"level":"info","message":"Listeing on port 3000...","timestamp":"2021-10-11T14:33:51.990Z"}
+{"level":"info","message":"Connected to mongodb://localhost:27017/TourSLDB-testing...","timestamp":"2021-10-11T14:33:52.009Z"}
+{"level":"info","message":"Connected to mongodb://localhost:27017/TourSLDB-testing...","timestamp":"2021-10-11T14:33:52.033Z"}
+{"level":"info","message":"Listeing on port 3000...","timestamp":"2021-10-11T14:33:52.042Z"}
+{"level":"info","message":"Connected to mongodb://localhost:27017/TourSLDB-testing...","timestamp":"2021-10-11T14:33:52.074Z"}
+{"level":"info","message":"Listeing on port 3000...","timestamp":"2021-10-11T14:33:52.128Z"}
+{"level":"info","message":"Listeing on port 3000...","timestamp":"2021-10-11T14:35:54.254Z"}
+{"level":"info","message":"Connected to mongodb://localhost:27017/TourSLDB-testing...","timestamp":"2021-10-11T14:35:54.336Z"}
+{"level":"info","message":"Connected to mongodb://localhost:27017/TourSLDB-testing...","timestamp":"2021-10-11T14:35:54.336Z"}
+{"level":"info","message":"Connected to mongodb://localhost:27017/TourSLDB-testing...","timestamp":"2021-10-11T14:35:54.339Z"}
+{"level":"info","message":"Listeing on port 3000...","timestamp":"2021-10-11T14:35:54.366Z"}
+{"level":"info","message":"Listeing on port 3000...","timestamp":"2021-10-11T14:35:54.373Z"}
+{"level":"info","message":"Listeing on port 3000...","timestamp":"2021-10-11T14:35:54.438Z"}
+{"level":"info","message":"Connected to mongodb://localhost:27017/TourSLDB-testing...","timestamp":"2021-10-11T14:35:54.475Z"}
+{"level":"info","message":"Listeing on port 3000...","timestamp":"2021-10-11T14:37:02.080Z"}
+{"level":"info","message":"Connected to mongodb://localhost:27017/TourSLDB-testing...","timestamp":"2021-10-11T14:37:02.107Z"}
+{"level":"info","message":"Connected to mongodb://localhost:27017/TourSLDB-testing...","timestamp":"2021-10-11T14:37:02.126Z"}
+{"level":"info","message":"Listeing on port 3000...","timestamp":"2021-10-11T14:37:02.129Z"}
+{"level":"info","message":"Connected to mongodb://localhost:27017/TourSLDB-testing...","timestamp":"2021-10-11T14:37:02.135Z"}
+{"level":"info","message":"Listeing on port 3000...","timestamp":"2021-10-11T14:37:02.157Z"}
+{"level":"info","message":"Listeing on port 3000...","timestamp":"2021-10-11T14:37:02.213Z"}
+{"level":"info","message":"Connected to mongodb://localhost:27017/TourSLDB-testing...","timestamp":"2021-10-11T14:37:02.242Z"}
+{"level":"info","message":"Listeing on port 3000...","timestamp":"2021-10-11T14:37:19.973Z"}
+{"level":"info","message":"Connected to mongodb://localhost:27017/TourSLDB-testing...","timestamp":"2021-10-11T14:37:19.995Z"}
+{"level":"info","message":"Connected to mongodb://localhost:27017/TourSLDB-testing...","timestamp":"2021-10-11T14:37:20.001Z"}
+{"level":"info","message":"Connected to mongodb://localhost:27017/TourSLDB-testing...","timestamp":"2021-10-11T14:37:20.001Z"}
+{"level":"info","message":"Listeing on port 3000...","timestamp":"2021-10-11T14:37:20.020Z"}
+{"level":"info","message":"Listeing on port 3000...","timestamp":"2021-10-11T14:37:20.021Z"}
+{"level":"info","message":"Listeing on port 3000...","timestamp":"2021-10-11T14:38:34.545Z"}
+{"level":"info","message":"Connected to mongodb://localhost:27017/TourSLDB-testing...","timestamp":"2021-10-11T14:38:34.564Z"}
+{"level":"info","message":"Listeing on port 3000...","timestamp":"2021-10-11T14:38:34.616Z"}
+{"level":"info","message":"Connected to mongodb://localhost:27017/TourSLDB-testing...","timestamp":"2021-10-11T14:38:34.637Z"}
+{"level":"info","message":"Listeing on port 3000...","timestamp":"2021-10-11T14:39:43.030Z"}
+{"level":"info","message":"Connected to mongodb://localhost:27017/TourSLDB-testing...","timestamp":"2021-10-11T14:39:43.048Z"}
+{"level":"info","message":"Listeing on port 3900...","timestamp":"2021-10-11T14:42:53.055Z"}
+{"level":"info","message":"Connected to mongodb+srv://admin:admin12345@toursldb.oibep.mongodb.net/TourSLDB?retryWrites=true&w=majority...","timestamp":"2021-10-11T14:43:06.307Z"}
+{"level":"info","message":"Listeing on port 3900...","timestamp":"2021-10-11T14:58:08.298Z"}
+{"level":"info","message":"Connected to mongodb+srv://admin:admin12345@toursldb.oibep.mongodb.net/TourSLDB?retryWrites=true&w=majority...","timestamp":"2021-10-11T14:58:21.219Z"}
+{"level":"info","message":"Listeing on port 3900...","timestamp":"2021-10-11T17:43:11.739Z"}
+{"level":"info","message":"Connected to mongodb+srv://admin:admin12345@toursldb.oibep.mongodb.net/TourSLDB?retryWrites=true&w=majority...","timestamp":"2021-10-11T17:43:16.309Z"}
+{"level":"info","message":"Listeing on port 3900...","timestamp":"2021-10-11T17:53:06.818Z"}
+{"level":"info","message":"Connected to mongodb+srv://admin:admin12345@toursldb.oibep.mongodb.net/TourSLDB?retryWrites=true&w=majority...","timestamp":"2021-10-11T17:53:11.184Z"}
+{"level":"info","message":"Listeing on port 3900...","timestamp":"2021-10-11T17:53:50.694Z"}
+{"level":"info","message":"Connected to mongodb+srv://admin:admin12345@toursldb.oibep.mongodb.net/TourSLDB?retryWrites=true&w=majority...","timestamp":"2021-10-11T17:53:55.786Z"}
+{"level":"info","message":"Listeing on port 3900...","timestamp":"2021-10-11T18:06:37.379Z"}
+{"level":"info","message":"Connected to mongodb+srv://admin:admin12345@toursldb.oibep.mongodb.net/TourSLDB?retryWrites=true&w=majority...","timestamp":"2021-10-11T18:06:49.111Z"}
+{"level":"info","message":"Listeing on port 3900...","timestamp":"2021-10-11T18:07:21.200Z"}
+{"level":"info","message":"Connected to mongodb+srv://admin:admin12345@toursldb.oibep.mongodb.net/TourSLDB?retryWrites=true&w=majority...","timestamp":"2021-10-11T18:07:32.636Z"}
+{"level":"info","message":"Listeing on port 3900...","timestamp":"2021-10-11T18:19:37.936Z"}
+{"level":"info","message":"Connected to mongodb+srv://admin:admin12345@toursldb.oibep.mongodb.net/TourSLDB?retryWrites=true&w=majority...","timestamp":"2021-10-11T18:19:41.831Z"}

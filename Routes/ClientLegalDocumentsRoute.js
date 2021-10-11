@@ -73,7 +73,7 @@ router.delete('/:id', async(req, res) => {
     res.send(cliLD);
 });
 
-router.get(':id', async(req, res) => {
+router.get('/:id', async(req, res) => {
     const cliLD = await ClientLegalDocuments.findById(req.params.id);
 
     if (!cliLD) {

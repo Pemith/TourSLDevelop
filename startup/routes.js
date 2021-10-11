@@ -24,7 +24,7 @@ module.exports=function(app){
     app.use('/api/authadmin',authAdmin);
     app.use('/api/site',cors(),site);
     app.use('/api/client', client);
-    app.use('/api/clientLegalDocuments', clientLegalDocuments);
+    app.use('/api/clientLegaldocuments', cors(),clientLegalDocuments);
     app.use('/api/clientPhotos', clientPhotos);
     app.use('/api/clienttemp',cors(), clientTemp);
     app.use('/api/clientauth', cors(),authClient);
