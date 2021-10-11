@@ -5,17 +5,21 @@ const clientTempSchema = new mongoose.Schema({
     companyName: {
         type: String,
         required: true,
-        minlength: 10,
-        maxlength: 50
+        minlength: 5,
+        maxlength: 250
     },
-    NICofAccountHolder: {
+    serviceType: {
         type: String,
-        minlength: 12,
-        maxlength: 12,
-        required: true,
-        unique: true
+        required: true
     },
-
+    address: {
+        type: String,
+        required: true,
+    },
+    district:{
+        type:String,
+        required:true
+    },
     email: {
         type: String,
         unique: true,
@@ -27,30 +31,20 @@ const clientTempSchema = new mongoose.Schema({
         type: String,
         required: true,
         minlength: 8,
-        maxlength: 20
+        maxlength: 200
     },
-
-    serviceType: {
-        type: String,
-        required: true
-    },
-
-    documents: {
-        type: [String],
-        required: true
-    }
 });
 
 const ClientTemp = mongoose.model('ClientTemp', clientTempSchema);
 
 function validateClientTempSchema(clientTempSchema) {
     const schema = Joi.object({
-        companyName: Joi.string().min(10).max(50).required(),
-        NICofAccountHolder: Joi.string().min(12).max(12).required(),
-        email: Joi.string().required(),
-        password: Joi.string().min(8).max(20).required(),
+        companyName: Joi.string().min(5).max(250).required(),
         serviceType: Joi.string().required(),
-        documents: Joi.string().required()
+        address: Joi.string().required(),
+        district: Joi.string().required(),
+        email: Joi.string().required(),
+        password: Joi.string().min(8).max(200).required(),
     }).options({ abortEarly: false });
 
     return schema.validate(clientTempSchema);

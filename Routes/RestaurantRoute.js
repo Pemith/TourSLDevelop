@@ -1,10 +1,11 @@
 const {Restaurant, validate}=require('../Models/Restaurant');
+const validateObjectId=require('../middleware/validateObjectId');
 const mongoose=require('mongoose');
 const express=require('express');
 const router=express.Router();
 
 router.get('/',async(req,res)=>{
-    const ap=await Restaurant.find().sort('activityType');
+    const ap=await Restaurant.find().sort(_id);
     res.send(ap);
 });
 
@@ -12,14 +13,14 @@ router.post('/',async (req,res)=>{
     const {error}=validate(req.body);
     if (error) return res.status(400).send(error.details[0].message);
     
-    let ap=new Restaurant({
+    let restaurant=new Restaurant({
         cuisine:req.body.cuisine,
         menu:req.body.menu,
         diningType:req.body.diningType
     });
     try{
-        ap=await ap.save();    
-        res.send(ap);
+        restaurant=await restaurant.save();    
+        res.send(restaurant);
     }
 
     catch(ex){
@@ -60,7 +61,7 @@ router.delete("/:id", async(req,res)=>{
     res.send(ap);
 });
 
-router.get(':id',async(req,res)=>{
+router.get('/:id', validateObjectId,async(req,res)=>{
     const ap=await Restaurant.findById(req.params.id);
 
     if(!ap){
