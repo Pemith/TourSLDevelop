@@ -4,8 +4,9 @@ const Joi = require('joi');
 const restaurantSchema= new mongoose.Schema({
 
     cuisine:{
-        type:Array,
-        enum: ['Dining','Take-Away'],
+        type:String,
+        // type:Array,
+        // enum: ['Dining','Take-Away'],
         required: true,
     },
     menu: {
