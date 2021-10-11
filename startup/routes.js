@@ -12,20 +12,21 @@ const clientLegalDocuments = require('../Routes/ClientLegalDocumentsRoute');
 const clientPhotos = require('../Routes/ClientPhotosRoute');
 const clientTemp = require('../Routes/ClientTempRoute');
 const error=require('../middleware/error');
+var cors=require('cors');
 
 module.exports=function(app){
     app.use(express.json());
-    app.use('/api/activityprovider', activityProvider);
-    app.use('/api/restaurant', restaurant);
-    app.use('/api/customer', customer);
+    app.use('/api/activityprovider',cors(), activityProvider);
+    app.use('/api/restaurant',cors(), restaurant);
+    app.use('/api/customer', cors(),customer);
     app.use('/api/authcustomer',authCustomer);
     app.use('/api/admin',admin);
     app.use('/api/authadmin',authAdmin);
-    app.use('/api/site',site);
+    app.use('/api/site',cors(),site);
     app.use('/api/client', client);
     app.use('/api/clientLegalDocuments', clientLegalDocuments);
     app.use('/api/clientPhotos', clientPhotos);
-    app.use('/api/clienttemp', clientTemp);
-    app.use('/api/clientauth', authClient);
+    app.use('/api/clienttemp',cors(), clientTemp);
+    app.use('/api/clientauth', cors(),authClient);
     app.use(error);
 }

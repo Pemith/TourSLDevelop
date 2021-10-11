@@ -1,4 +1,5 @@
 const {Restaurant, validate}=require('../Models/Restaurant');
+const validateObjectId=require('../middleware/validateObjectId');
 const mongoose=require('mongoose');
 const express=require('express');
 const router=express.Router();
@@ -60,7 +61,7 @@ router.delete("/:id", async(req,res)=>{
     res.send(ap);
 });
 
-router.get('/:id',async(req,res)=>{
+router.get('/:id', validateObjectId,async(req,res)=>{
     const ap=await Restaurant.findById(req.params.id);
 
     if(!ap){

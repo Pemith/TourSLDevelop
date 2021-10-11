@@ -26,7 +26,7 @@ router.post('/', async(req, res) => {
         address:req.body.address,
         district:req.body.district,
         email: req.body.email,
-        password: req.body.password,
+        password: req.body.password
     });
 
     try {
@@ -48,11 +48,11 @@ router.put('./:id', async(req, res) => {
     const cliTemp = await ClientTemp.findByIdAndUpdate(
         req.params.id, {
             companyName: req.body.companyName,
-            NICofAccountHolder: req.body.NICofAccountHolder,
-            email: req.body.email,
-            password: req.body.password,
             serviceType: req.body.serviceType,
-            documents: req.body.documents
+            address:req.body.address,
+            district:req.body.district,
+            email: req.body.email,
+            password: req.body.password
         }, {
             new: true
         }

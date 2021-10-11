@@ -4,14 +4,14 @@ const Joi = require('joi');
 const restaurantSchema= new mongoose.Schema({
 
     cuisine:{
-        type: [String],
+        type: String,
         required: true,
     },
     menu: {
         type: String
     },
     diningType:{
-        type:[String],
+        type:String,
         required: true
     }
 
