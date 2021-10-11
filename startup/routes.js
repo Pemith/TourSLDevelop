@@ -16,7 +16,7 @@ var cors=require('cors');
 
 module.exports=function(app){
     app.use(express.json());
-    app.use('/api/activityprovider',cors(), activityProvider);
+    app.use('/api/activityprovider',activityProvider);
     app.use('/api/restaurant',cors(), restaurant);
     app.use('/api/customer', cors(),customer);
     app.use('/api/authcustomer',authCustomer);
