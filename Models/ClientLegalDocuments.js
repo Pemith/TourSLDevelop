@@ -3,18 +3,18 @@ const Joi = require('joi');
 const moment = require('moment');
 
 const clientLegalDocumentsSchema = new mongoose.Schema({
-    client: {
-        type: new mongoose.Schema({
-            name: {
-                type: String,
-                required: true,
-                minlength: 10,
-                maxlength: 50
-            }
+    // client: {
+    //     type: new mongoose.Schema({
+    //         name: {
+    //             type: String,
+    //             required: true,
+    //             minlength: 10,
+    //             maxlength: 50
+    //         }
 
-        }),
-        required: true
-    },
+    //     }),
+    //     required: true
+    // },
     fileName: {
         type: String,
         required: true
@@ -33,17 +33,17 @@ const clientLegalDocumentsSchema = new mongoose.Schema({
     }
 });
 
-clientLegalDocumentsSchema.statics.lookup = function(clientId) {
-    return this.findOne({
-        'client._id': clientId
-    });
-}
+// clientLegalDocumentsSchema.statics.lookup = function(clientId) {
+//     return this.findOne({
+//         'client._id': clientId
+//     });
+// }
 const ClientLegalDocuments = mongoose.model('ClientLegalDocument', clientLegalDocumentsSchema);
 
 function validateClientLegalDocumentsSchema(clientLegalDocumentsSchema) {
     const schema = Joi.object({
         clientId: Joi.objectId().required(),
-        documents: Joi.string().required()
+        // documents: Joi.string().required()
     }).options({ abortEarly: false });
 
     return schema.validate(clientLegalDocumentsSchema);

@@ -1,3 +1,5 @@
+const path=require('path');
+const bodyParser=require('body-parser');
 const express=require('express');
 const activityProvider = require('../Routes/ActivityProviderRoute');
 const restaurant = require('../Routes/RestaurantRoute');
@@ -16,6 +18,9 @@ var cors=require('cors');
 
 module.exports=function(app){
     app.use(express.json());
+    // app.use(bodyParser.json());
+    // app.use('/uploads',express.static(path.join(__dirname,'uploads')));
+    // app.use('api',cors(),clientLegalDocuments.routes);
     app.use('/api/activityprovider',activityProvider);
     app.use('/api/restaurant',cors(), restaurant);
     app.use('/api/customer', cors(),customer);

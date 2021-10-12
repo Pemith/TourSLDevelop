@@ -1,13 +1,24 @@
-const legalDocs=require('../Models/ClientLegalDocuments');
+const {ClientLegalDocuments}=require('../Models/ClientLegalDocuments');
+const {Client,validate}=require('../Models/Client');
+const bcrypt = require('bcrypt');
+const mongoose = require('mongoose');
+const _ = require('lodash');
 
 
 const legalFileUpload=async(req,res,next) =>{
     try {
-        const file=new legalDocs({
-            client: {
-                _id: client._id,
-                name: client.companyName
-            },
+
+        // const { error } = validate(req.body);
+        // if (error) return res.status(400).send(error.details[0].message);
+
+        // const client = await Client.findById(req.body.clientId);
+        // if (!client) return res.status(400).send("Invalid client.");
+
+        const file=new ClientLegalDocuments({
+            // client: {
+            //     _id: client._id,
+            //     name: client.companyName
+            // },
             fileName:req.file.originalname,
             filePath:req.file.path,
             fileType=req.file.mimetype,
@@ -23,7 +34,7 @@ const legalFileUpload=async(req,res,next) =>{
 
 const getLegalDocuments= async (req,res,next) =>{
     try {
-        const files=new legalDocs.find();
+        const files=new ClientLegalDocuments.find();
         res.status(200).send(files);
     } catch (error) {
         res.status(400).send(error.message);
