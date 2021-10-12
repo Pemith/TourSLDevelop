@@ -22,12 +22,11 @@ router.post('/', async(req, res) => {
 
     client = new Client({
         companyName: req.body.companyName,
-        NICofAccountHolder: req.body.NICofAccountHolder,
-        email: req.body.email,
-        password: req.body.password,
         serviceType: req.body.serviceType,
-        address: req.body.address,
-        district: req.body.district
+        address:req.body.address,
+        district:req.body.district,
+        email: req.body.email,
+        password: req.body.password
     });
 
     const salt = await bcrypt.genSalt(10);
@@ -52,12 +51,11 @@ router.put('./:id', async(req, res) => {
     const cli = await Client.findByIdAndUpdate(
         req.params.id, {
             companyName: req.body.companyName,
-            NICofAccountHolder: req.body.NICofAccountHolder,
-            email: req.body.email,
-            password: req.body.password,
             serviceType: req.body.serviceType,
-            address: req.body.address,
-            district: req.body.district
+            address:req.body.address,
+            district:req.body.district,
+            email: req.body.email,
+            password: req.body.password
         }, {
             new: true
         }
