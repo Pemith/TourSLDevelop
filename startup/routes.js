@@ -2,6 +2,7 @@ const path=require('path');
 const bodyParser=require('body-parser');
 const express=require('express');
 const activityProvider = require('../Routes/ActivityProviderRoute');
+const packages=require('../Routes/PackgesRoute')
 const restaurant = require('../Routes/RestaurantRoute');
 const customer = require('../Routes/CustomerRoute');
 const authCustomer = require('../Routes/Auth');
@@ -22,6 +23,7 @@ module.exports=function(app){
     // app.use('/uploads',express.static(path.join(__dirname,'uploads')));
     // app.use('api',cors(),clientLegalDocuments.routes);
     app.use('/api/activityprovider',activityProvider);
+    app.use('/api/packagedashboard',cors(),packages);
     app.use('/api/restaurant',cors(), restaurant);
     app.use('/api/customer', cors(),customer);
     app.use('/api/authcustomer',authCustomer);
