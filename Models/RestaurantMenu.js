@@ -1,9 +1,10 @@
 const mongoose=require('mongoose');
 const Joi=require('joi');
-const moment = require('moment');
+const moment =require('moment');
+const { number } = require('joi');
 
-const packageSchema=new mongoose.Schema({
-    
+const menuSchema=new mongoose.Schema({
+
     client:{
         type:new mongoose.Schema({
             name:{
@@ -13,7 +14,7 @@ const packageSchema=new mongoose.Schema({
         }),
         required:true
     },
-    packageName:{
+    menuItem:{
         type:String,
         max:20,
         required:true
@@ -24,22 +25,22 @@ const packageSchema=new mongoose.Schema({
     }
 });
 
-packageSchema.statics.lookup=function(clientId){
+menuSchema.statics.lookup=function(clientId){
     return this.findOne({
         'client._id':clientId
     })
 }
-const packages=mongoose.model('package',packageSchema);
- 
 
-function validatePackage(pkgs){
+const menu=mongoose.model('menu',menuSchema);
+
+function validateMenu(menu){
     const schema=Joi.object({
         clientId:Joi.objectId().required(),
-        packageName:Joi.required(),
-        price:Joi.required()
+        menuItem:Joi.string().max(20).required(),
+        price:Joi.number().required()
     }).options({abortEarly:false});
-    return schema.validate(pkgs);
+    return schema.validate(menu);
 }
 
-exports.Packages=packages;
-exports.validate=validatePackage;
+exports.Menu=menu;
+exports.validate=validateMenu;

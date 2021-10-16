@@ -4,6 +4,7 @@ const express=require('express');
 const activityProvider = require('../Routes/ActivityProviderRoute');
 const packages=require('../Routes/PackgesRoute')
 const restaurant = require('../Routes/RestaurantRoute');
+const menu=require('../Routes/MenuRoute');
 const customer = require('../Routes/CustomerRoute');
 const authCustomer = require('../Routes/Auth');
 const admin = require('../Routes/AdminRoute');
@@ -25,6 +26,7 @@ module.exports=function(app){
     app.use('/api/activityprovider',activityProvider);
     app.use('/api/packagedashboard',cors(),packages);
     app.use('/api/restaurant',cors(), restaurant);
+    app.use('/api/menuupload',cors(),menu);
     app.use('/api/customer', cors(),customer);
     app.use('/api/authcustomer',authCustomer);
     app.use('/api/admin',admin);
