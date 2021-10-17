@@ -4,8 +4,8 @@ const Joi = require('joi');
 const restaurantSchema= new mongoose.Schema({
 
     cuisine:{
-        type:String,
-        // type:Array,
+        // type:String,
+        type:Array,
         // enum: ['Dining','Take-Away'],
         required: true,
     },
@@ -24,7 +24,7 @@ const restaurant=mongoose.model('restaurant',restaurantSchema);
 function validateRestaurant(restaurant){
 
     const schema=Joi.object({
-        cuisine:Joi.string().required(),
+        cuisine:Joi.required(),
         menu: Joi.string().required(),
         diningType:Joi.string().required()
     }).options({abortEarly:false});

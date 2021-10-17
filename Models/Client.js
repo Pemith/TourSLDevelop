@@ -7,17 +7,21 @@ const clientSchema = new mongoose.Schema({
     companyName: {
         type: String,
         required: true,
-        minlength: 10,
-        maxlength: 50
+        minlength: 5,
+        maxlength: 250
     },
-    NICofAccountHolder: {
+    serviceType: {
         type: String,
-        minlength: 12,
-        maxlength: 12,
-        required: true,
-        unique: true
+        required: true
     },
-
+    address: {
+        type: String,
+        required: true,
+    },
+    district:{
+        type:String,
+        required:true
+    },
     email: {
         type: String,
         unique: true,
@@ -29,39 +33,28 @@ const clientSchema = new mongoose.Schema({
         type: String,
         required: true,
         minlength: 8,
-        maxlength: 255
+        maxlength: 200
     },
-
-    serviceType: {
-        type: String,
-        required: true
-    },
-
-    address: {
-        type: [String],
-        required: true
-    },
-
-    district: {
-        type: String,
-        required: true
-    }
 });
 clientSchema.methods.generateAuthToken = function() {
-    const token = jwt.sign({ _id: this._id }, config.get('jwtPrivateKey'));
+    const token = jwt.sign({ 
+        _id: this._id, 
+        companyName:this.companyName,
+        email:this.email
+    }, 
+    config.get('jwtPrivateKey'));
     return token;
 }
 const client = mongoose.model('Client', clientSchema);
 
 function validateClient(client) {
     const schema = Joi.object({
-        companyName: Joi.string().min(10).max(50).required(),
-        NICofAccountHolder: Joi.string().min(12).max(12).required(),
-        email: Joi.string().required(),
-        password: Joi.string().min(8).max(255).required(),
+        companyName: Joi.string().min(5).max(250).required(),
         serviceType: Joi.string().required(),
         address: Joi.string().required(),
-        district: Joi.string().required()
+        district: Joi.string().required(),
+        email: Joi.string().required(),
+        password: Joi.string().min(8).max(200).required(),
     }).options({ abortEarly: false });
 
     return schema.validate(client);
