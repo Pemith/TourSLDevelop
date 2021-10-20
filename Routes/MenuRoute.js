@@ -5,6 +5,12 @@ const mongoose=require('mongoose');
 const express=require('express');
 const router=express.Router();
 
+router.get("/",async(req,res) =>{
+    const menu=await Menu.find()
+        .select("-__v");
+    res.send(menu);
+});
+
 
 router.post('/', async(req,res)=>{
     const{error}=validate(req.body);
@@ -33,6 +39,16 @@ router.post('/', async(req,res)=>{
     } catch (ex) {
         console.log(ex.message)
     }
+});
+
+router.get("/:id",async(req,res) =>{
+    const menu=await Menu.findById(req.params.id).select("-__v");
+
+    if(!menu){
+        return res.status(404).send("The Menu with the Id is not valid");
+    }
+
+    res.send(menu);
 });
 
 module.exports=router;

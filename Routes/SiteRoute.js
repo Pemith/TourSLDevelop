@@ -33,7 +33,8 @@ router.post('/', authz, async (req,res)=>{
         district:req.body.district,
         address:req.body.address,
         siteType:req.body.siteType,
-        openHrs:req.body.openHrs
+        openHrs:req.body.openHrs,
+        description:req.body.description
         
     });
 

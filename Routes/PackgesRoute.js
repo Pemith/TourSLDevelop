@@ -19,7 +19,6 @@ router.post('/', async(req,res)=>{
     let packages=new Packages({
         client:{
             _id:client._id,
-            name:client.companyName
         },
         packageName:req.body.packageName,
         price:req.body.price
@@ -50,7 +49,6 @@ router.put("/:id",async(req,res) =>{
         {
             client:{
                 _id:client._id,
-                name:client.companyName
             },
             packageName:req.body.packageName,
             price:req.body.price
