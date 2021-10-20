@@ -17,21 +17,26 @@ const siteSchema=new mongoose.Schema({
 
     address: {
         type :String,
-        max:255,
-        required: true
+        max:255
     },
     siteType: {
         type: String,
         max: 255,
+        required:true
     },
 
     openHrs: {
         type: String,
         min:3,
-        max: 20,
-        required: true
+        max: 20
     },
-    
+
+    description:{
+        type:String,
+        min:3,
+        max:1000,
+        required:true,
+    },   
     date: {
         type:Date,
         required:true,
@@ -53,14 +58,18 @@ function siteValidation(site){
             .required(),
 
         address: Joi.string()
+            .max(255),
+        siteType: Joi.string()
             .max(255)
             .required(),
-        siteType: Joi.string()
-            .max(255),
         
         openHrs: Joi.string()
             .min(3)
             .max(20)
+            .required(),
+        description: Joi.string()
+            .min(3)
+            .max(1000)
             .required()
         
 

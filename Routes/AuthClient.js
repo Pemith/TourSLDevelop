@@ -29,7 +29,7 @@ router.post('/', async(req, res) => {
     res
         .header("X-auth-token",token)
         .header("access-control-expose-headers","x-auth-token")
-        .send(_.pick(client,["_id","email"]));
+        .send(_.pick(client,["_id","email","serviceType"]));
 });
 
 function validate(req) {

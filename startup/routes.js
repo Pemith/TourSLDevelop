@@ -23,8 +23,8 @@ module.exports=function(app){
     // app.use(bodyParser.json());
     // app.use('/uploads',express.static(path.join(__dirname,'uploads')));
     // app.use('api',cors(),clientLegalDocuments.routes);
-    app.use('/api/activityprovider',activityProvider);
-    app.use('/api/packagedashboard',cors(),packages);
+    app.use('/api/activityprovider',cors(),activityProvider);
+    app.use('/api/packageupload',cors(),packages);
     app.use('/api/restaurant',cors(), restaurant);
     app.use('/api/menuupload',cors(),menu);
     app.use('/api/customer', cors(),customer);

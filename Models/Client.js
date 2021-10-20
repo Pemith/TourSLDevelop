@@ -40,7 +40,8 @@ clientSchema.methods.generateAuthToken = function() {
     const token = jwt.sign({ 
         _id: this._id, 
         companyName:this.companyName,
-        email:this.email
+        email:this.email,
+        serviceType:this.serviceType
     }, 
     config.get('jwtPrivateKey'));
     return token;
