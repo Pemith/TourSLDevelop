@@ -8,6 +8,7 @@ const router=express.Router();
 router.get("/",async(req,res) =>{
     const menu=await Menu.find()
         .select("-__v");
+        // .sort('menuItem');
     res.send(menu);
 });
 
