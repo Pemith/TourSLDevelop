@@ -5,6 +5,15 @@ const mongoose=require('mongoose');
 const express = require('express');
 const router = express.Router();
 
+
+router.get('/',async(req,res) =>{
+
+    const package=await Packages.find()
+        .select("-__v")
+        .sort('packageName');
+    res.send(package);
+});
+
 router.post('/', async(req,res)=>{
     const {error}=validate(req.body);
     if(error){
@@ -64,5 +73,15 @@ router.put("/:id",async(req,res) =>{
 
     res.send(package);
 })
+
+router.get("/:id", async(req,res)=>{
+    const package=await Packages.findById(req.params.id).select('-__v');
+
+    if(!package){
+        return res.status(404).send("The Package with the given Id is not found");
+    }
+
+    res.send(package);
+});
 
 module.exports=router;
