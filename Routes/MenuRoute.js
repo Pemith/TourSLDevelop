@@ -28,7 +28,9 @@ router.post('/', async(req,res)=>{
     let menu=new Menu({
         client:{
             _id:client._id,
-            name:client.companyName
+            name:client.companyName,
+            district:client.district
+            
         },
         menuItem:req.body.menuItem,
         price:req.body.price

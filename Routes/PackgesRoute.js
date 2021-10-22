@@ -28,6 +28,8 @@ router.post('/', async(req,res)=>{
     let packages=new Packages({
         client:{
             _id:client._id,
+            name:client.companyName,
+            district:client.district
         },
         packageName:req.body.packageName,
         price:req.body.price
