@@ -86,4 +86,14 @@ router.get("/:id", async(req,res)=>{
     res.send(package);
 });
 
+router.delete("/:id",async(req,res)=>{{
+    const package=await Packages.findByIdAndRemove(req.params.id);
+
+    if(!package){
+        return res.status(404).send("The Menu Item is Not Valid");
+    }
+
+    res.send(package);
+}});
+
 module.exports=router;
