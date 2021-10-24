@@ -26,6 +26,10 @@ const menuSchema=new mongoose.Schema({
     price:{
         type:Number,
         required:true
+    },
+    mealType:{
+        type:String,
+        required:true
     }
 });
 
@@ -41,7 +45,8 @@ function validateMenu(menu){
     const schema=Joi.object({
         clientId:Joi.objectId().required(),
         menuItem:Joi.string().max(20).required(),
-        price:Joi.number().required()
+        price:Joi.number().required(),
+        mealType:Joi.string().required()
     }).options({abortEarly:false});
     return schema.validate(menu);
 }
