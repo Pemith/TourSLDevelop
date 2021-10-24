@@ -7,8 +7,8 @@ const router=express.Router();
 
 router.get("/",async(req,res) =>{
     const menu=await Menu.find()
-        .select("-__v");
-        // .sort('menuItem');
+        .select("-__v")
+        .sort('menuItem');
     res.send(menu);
 });
 
@@ -33,7 +33,8 @@ router.post('/', async(req,res)=>{
             
         },
         menuItem:req.body.menuItem,
-        price:req.body.price
+        price:req.body.price,
+        mealType:req.body.mealType
     });
     
     try {
