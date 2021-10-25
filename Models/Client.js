@@ -15,8 +15,9 @@ const clientSchema = new mongoose.Schema({
         required: true
     },
     contactNumber:{
-        type:Number,
+        type:String,
         minlength:9,
+        maxlength:10,
         required:true
     },
     address: {
@@ -57,7 +58,7 @@ function validateClient(client) {
     const schema = Joi.object({
         companyName: Joi.string().min(5).max(250).required(),
         serviceType: Joi.string().required(),
-        contactNumber:Joi.number().min(9).required(),
+        contactNumber:Joi.string().min(9).max(10).required(),
         address: Joi.string().required(),
         district: Joi.string().required(),
         email: Joi.string().required(),
