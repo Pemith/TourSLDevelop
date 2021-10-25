@@ -23,6 +23,7 @@ router.post('/', async(req, res) => {
     client = new Client({
         companyName: req.body.companyName,
         serviceType: req.body.serviceType,
+        contactNumber:req.body.contactNumber,
         address:req.body.address,
         district:req.body.district,
         email: req.body.email,
@@ -52,6 +53,7 @@ router.put('/:id', async(req, res) => {
         req.params.id, {
             companyName: req.body.companyName,
             serviceType: req.body.serviceType,
+            contactNumber:req.body.contactNumber,
             address:req.body.address,
             district:req.body.district,
             email: req.body.email,
@@ -78,7 +80,7 @@ router.delete('/:id', async(req, res) => {
     res.send(cli);
 });
 
-router.get(':id', async(req, res) => {
+router.get('/:id', async(req, res) => {
     const cli = await Client.findById(req.params.id);
 
     if (!cli) {
