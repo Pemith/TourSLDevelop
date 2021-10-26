@@ -8,7 +8,7 @@ const router=express.Router();
 router.get("/",async(req,res) =>{
     const menu=await Menu.find()
         .select("-__v")
-        .sort({mealType:-1} );
+        .sort({mealType:1} );
         
     res.send(menu);
 });
