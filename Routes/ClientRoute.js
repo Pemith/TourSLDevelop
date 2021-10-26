@@ -23,6 +23,7 @@ router.post('/', async(req, res) => {
     client = new Client({
         companyName: req.body.companyName,
         serviceType: req.body.serviceType,
+        workingHours:req.body.workingHours,
         contactNumber:req.body.contactNumber,
         address:req.body.address,
         district:req.body.district,
@@ -53,6 +54,7 @@ router.put('/:id', async(req, res) => {
         req.params.id, {
             companyName: req.body.companyName,
             serviceType: req.body.serviceType,
+            workingHours:req.body.workingHours,
             contactNumber:req.body.contactNumber,
             address:req.body.address,
             district:req.body.district,
