@@ -15,6 +15,11 @@ router.post('/', async(req, res) => {
     const { error } = validate(req.body);
     if (error) return res.status(400).send(error.details[0].message);
 
+    let clientUserName=await Client.findOne({companyName:req.body.companyName});
+    if(clientUserName){
+        return res.status(400).send("User with the same Organization name is registered");
+    }
+
     let client = await Client.findOne({ email: req.body.email });
     if (client) {
         return res.status(400).send("User already Registered");
