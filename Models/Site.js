@@ -34,7 +34,7 @@ const siteSchema=new mongoose.Schema({
     description:{
         type:String,
         min:3,
-        max:1000,
+        max:10000,
         required:true,
     },   
     date: {
@@ -69,7 +69,7 @@ function siteValidation(site){
             .required(),
         description: Joi.string()
             .min(3)
-            .max(1000)
+            .max(10000)
             .required()
         
 
